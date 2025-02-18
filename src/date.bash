@@ -1,3 +1,14 @@
+# @file "date.bash"
+# @brief Date functions.
+# @description Date functions.
+
+# @description Skip until a date. If the date is in the past, fail the test.
+#
+# @example
+#   skip_until_date "2025-01-01"
+#
+# @arg $1 string date to skip until.
+#
 skip_until_date() {
     local check_date="${1}"
     check_date=$(date --date="${check_date}" +%Y-%m-%d)
