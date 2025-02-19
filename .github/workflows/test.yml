@@ -34,12 +34,12 @@ jobs:
           cd /tmp/bats-core
           sudo ./install.sh /usr/local
       - name: Install bats-support
-        run: git clone https://github.com/bats-core/bats-support.git ${BATS_LIB_PATH}/bats-support
+        run: sudo git clone https://github.com/bats-core/bats-support.git ${BATS_LIB_PATH}/bats-support
       - name: Install bats-assert
-        run: git clone https://github.com/bats-core/bats-assert.git ${BATS_LIB_PATH}/bats-assert
+        run: sudo git clone https://github.com/bats-core/bats-assert.git ${BATS_LIB_PATH}/bats-assert
       - name: Install bats-file
-        run: git clone https://github.com/bats-core/bats-file.git ${BATS_LIB_PATH}/bats-file
+        run: sudo git clone https://github.com/bats-core/bats-file.git ${BATS_LIB_PATH}/bats-file
       - name: Install bats-alimektor
-        run: make install
+        run: sudo make install
       - name: Run tests
         run: make test
