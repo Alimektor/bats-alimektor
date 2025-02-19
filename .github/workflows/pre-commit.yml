@@ -1,0 +1,26 @@
+---
+name: pre-commit
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: pollenjp/setup-shellcheck@v1
+        with:
+          version: latest
+      - uses: actions/setup-python@v3
+      - uses: mfinelli/setup-shfmt@v3
+      - uses: pre-commit/action@v3.0.1
