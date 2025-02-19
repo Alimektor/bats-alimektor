@@ -13,11 +13,11 @@ bats_load_library "bats-alimektor"
 setup_file() {
     setup_environment
     if [[ -z "${USERPROFILE}" ]]; then
-        export USERPROFILE="${HOME}"
+        export USERPROFILE="${BATS_TMPDIR}/user_profile"
         mkdir -p "${USERPROFILE}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"
     fi
     if [[ -z "${ALLUSERSPROFILE}" ]]; then
-        export ALLUSERSPROFILE="${HOME}/all"
+        export ALLUSERSPROFILE="${BATS_TMPDIR}/all_user_profile"
         mkdir -p "${ALLUSERSPROFILE}/Microsoft/Windows/Start Menu/Programs"
     fi
     report "Test app.bash"
