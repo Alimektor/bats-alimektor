@@ -1,0 +1,40 @@
+---
+name: CI docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 26 * *"
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git make bash
+      - name: Install shdoc
+        run: |
+          git clone --recursive https://github.com/reconquest/shdoc.git /tmp/shdoc
+          cd /tmp/shdoc
+          sudo make install
+      - name: Make docs
+        run: make docs
+      - name: Commit changes
+        run: |
+          git config --global user.email "alimektor@gmail.com"
+          git config --global user.name "アリメクタ アレネクト"
+          git add docs
+          git commit -m "Update docs using GitHub Actions"
+          git push
