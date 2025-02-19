@@ -1,0 +1,25 @@
+---
+name: Alpine Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 28 * *"
+
+env:
+  BATS_LIB_PATH: /usr/local/lib/bats
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run docker test
+        run: make docker-test
