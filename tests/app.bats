@@ -17,7 +17,7 @@ setup_file() {
         mkdir -p "${USERPROFILE}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"
     fi
     if [[ -z "${ALLUSERSPROFILE}" ]]; then
-        export ALLUSERSPROFILE="/"
+        export ALLUSERSPROFILE="${HOME}/all"
         mkdir -p "${ALLUSERSPROFILE}/Microsoft/Windows/Start Menu/Programs"
     fi
     report "Test app.bash"
