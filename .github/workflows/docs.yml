@@ -36,5 +36,5 @@ jobs:
           git config --global user.email "alimektor@gmail.com"
           git config --global user.name "アリメクタ アレネクト"
           git add docs
-          git commit -m "Update docs using GitHub Actions"
+          git commit -m "Update docs using GitHub Actions" || exit 0
           git push
