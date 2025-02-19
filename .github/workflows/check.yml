@@ -1,0 +1,31 @@
+---
+name: Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 27 * *"
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git make bash python3-pip shfmt shellcheck
+          python3 -m pip install --break-system-packages --user pre-commit
+      - name: Add .local/bin to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Run check
+        run: make check
