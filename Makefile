@@ -7,7 +7,7 @@ all: install
 
 ## Set variables to install / uninstall to ~/.bats/libs/
 ifeq ($(LOCAL), true)
-LIBDIR=~/.bats/libs
+LIBDIR=$(HOME)/.bats/libs
 endif
 
 install: ## Install bats-alimektor (Set LOCAL=true to install to ~/.bats/libs/)
