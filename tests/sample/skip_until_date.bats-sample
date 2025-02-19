@@ -1,0 +1,17 @@
+#!/usr/bin/env bats
+# Test 'Check date until 3000-01-01'
+
+bats_require_minimum_version 1.5.0
+
+bats_load_library "bats-support"
+bats_load_library "bats-assert"
+bats_load_library "bats-file"
+bats_load_library "bats-alimektor"
+
+setup_file() {
+    setup_environment
+}
+
+@test "Check date until 3000-01-01" {
+    skip_until_date "3000-01-01"
+}

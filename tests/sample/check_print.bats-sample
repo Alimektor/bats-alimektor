@@ -1,0 +1,17 @@
+#!/usr/bin/env bats
+# Test 'Check print message'
+
+bats_require_minimum_version 1.5.0
+
+bats_load_library "bats-support"
+bats_load_library "bats-assert"
+bats_load_library "bats-file"
+bats_load_library "bats-alimektor"
+
+setup_file() {
+    setup_environment
+}
+
+@test "Check print message" {
+    report "Check print message"
+}

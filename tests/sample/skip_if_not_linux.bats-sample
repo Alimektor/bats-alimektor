@@ -1,0 +1,17 @@
+#!/usr/bin/env bats
+# Test 'Skip if not linux'
+
+bats_require_minimum_version 1.5.0
+
+bats_load_library "bats-support"
+bats_load_library "bats-assert"
+bats_load_library "bats-file"
+bats_load_library "bats-alimektor"
+
+setup_file() {
+    setup_environment
+}
+
+@test "Skip if not linux" {
+    skip_if_not_linux
+}
