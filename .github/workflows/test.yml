@@ -14,11 +14,12 @@ on:
 env:
   BATS_LIB_PATH: /usr/local/lib/bats
   DEBIAN_FRONTEND: noninteractive
-  TMPDIR: /tmp
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+        TMPDIR: ${{ runner.temp }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
