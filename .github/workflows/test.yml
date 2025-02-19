@@ -18,8 +18,6 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-        TMPDIR: ${{ runner.temp }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
