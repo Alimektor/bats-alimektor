@@ -1,6 +1,8 @@
 # bats-alimektor #
 
-A Bats library with useful Bash functions.
+![test](https://github.com/Alimektor/bats-alimektor/actions/workflows/test.yml/badge.svg) ![check](https://github.com/Alimektor/bats-alimektor/actions/workflows/docker.yml/badge.svg) ![docs](https://github.com/Alimektor/bats-alimektor/actions/workflows/docs.yml/badge.svg) ![docker](https://github.com/Alimektor/bats-alimektor/actions/workflows/docker.yml/badge.svg)
+
+A [Bats](https://github.com/bats-core/bats-core) library with useful Bash functions.
 
 ## Installation ##
 
