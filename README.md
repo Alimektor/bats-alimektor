@@ -1,6 +1,6 @@
 # bats-alimektor #
 
-![test](https://github.com/Alimektor/bats-alimektor/actions/workflows/test.yml/badge.svg) ![check](https://github.com/Alimektor/bats-alimektor/actions/workflows/docker.yml/badge.svg) ![docs](https://github.com/Alimektor/bats-alimektor/actions/workflows/docs.yml/badge.svg) ![docker](https://github.com/Alimektor/bats-alimektor/actions/workflows/docker.yml/badge.svg)
+![ubuntu](https://github.com/Alimektor/bats-alimektor/actions/workflows/ubuntu.yml/badge.svg) ![alpine](https://github.com/Alimektor/bats-alimektor/actions/workflows/alpine.yml/badge.svg) ![docs](https://github.com/Alimektor/bats-alimektor/actions/workflows/docs.yml/badge.svg)
 
 A [Bats](https://github.com/bats-core/bats-core) library with useful Bash functions.
 
