@@ -1,9 +1,9 @@
 LIBDIR=$(DESTDIR)/usr/local/lib/bats
 LIBNAME=bats-alimektor
 
-.PHONY: all install uninstall man help
+.PHONY: all install uninstall docs check test docker docker-build-test docker-test docker-docs-build docker-docs-create docker-docs help
 
-all: install clean
+all: install
 
 ## Set variables to install / uninstall to ~/.bats/libs/
 ifeq ($(LOCAL), true)

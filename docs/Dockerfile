@@ -11,4 +11,4 @@ COPY . /app
 
 WORKDIR /app
 
-ENTRYPOINT ["./docs/create-docs.bash"]
+ENTRYPOINT ["make", "docs"]
