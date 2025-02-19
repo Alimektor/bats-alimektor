@@ -42,4 +42,4 @@ jobs:
       - name: Install bats-alimektor
         run: sudo make install
       - name: Run tests
-        run: make test
+        run: TMPDIR=${{ runner.temp }} make test
