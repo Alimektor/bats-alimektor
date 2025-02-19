@@ -49,7 +49,7 @@ docker-build-test: docker
 
 docker-test: docker-build-test ## Test bats-alimektor in the docker image
 	$(info "Running docker image...")
-	docker run -it bats-alimektor-test bats -r tests/
+	docker run bats-alimektor-test bats -r tests/
 	$(info "Ran docker image successfully...")
 
 docker-docs-build:
@@ -59,7 +59,7 @@ docker-docs-build:
 
 docker-docs-create:
 	$(info "Running docker image...")
-	docker run -v ${PWD}:/app -it bats-alimektor-docs
+	docker run -v ${PWD}:/app bats-alimektor-docs
 	$(info "Ran docker image successfully...")
 
 docker-docs: docker-docs-build docker-docs-create ## Create docs in docker image
