@@ -23,7 +23,7 @@ uninstall: ## Uninstall bats-alimektor (Set LOCAL=true to install to ~/.bats/lib
 
 docs: ## Create docs
 	$(info "Creating docs...")
-	docs/create-docs.bash
+	docs/create-docs.sh
 	$(info "Created docs successfully...")
 
 check: ## Check bats-alimektor
