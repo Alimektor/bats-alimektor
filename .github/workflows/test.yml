@@ -43,5 +43,3 @@ jobs:
         run: sudo make install
       - name: Run tests
         run: make test
-        env:
-          TMPDIR: ${{ runner.temp }}

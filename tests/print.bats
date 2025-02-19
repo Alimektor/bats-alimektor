@@ -20,6 +20,6 @@ teardown_file() {
 }
 
 @test "Check print message" {
-    run -0 "${BATS_TMPDIR}/check_print.bats"
+    run -0 bats "${BATS_TMPDIR}/check_print.bats"
     echo -e "1..1\n# Check print message\nok 1 Check print message" | assert_output
 }

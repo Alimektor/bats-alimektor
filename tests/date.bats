@@ -23,11 +23,11 @@ teardown_file() {
 }
 
 @test "Check date until 3000-01-01" {
-    run -0 "${BATS_TMPDIR}/skip_until_date.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_until_date.bats"
     assert_output --partial "Check date until 3000-01-01 # skip Currently skip until 3000-01-01."
 }
 
 @test "Check date after 2000-01-01" {
-    run -1 "${BATS_TMPDIR}/skip_after_date.bats"
+    run -1 bats "${BATS_TMPDIR}/skip_after_date.bats"
     assert_output --partial "It's time to check this test! Check date: 2000-01-01."
 }

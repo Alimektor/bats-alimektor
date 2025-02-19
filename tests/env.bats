@@ -91,33 +91,33 @@ teardown_file() {
 
 @test "Check skip_if_docker" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_docker.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_docker.bats"
     echo -e "1..1\nok 1 Skip if docker # skip Docker doesn't need it." | assert_output -
 }
 
 @test "Check skip_if_not_docker" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_not_docker.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_not_docker.bats"
     echo -e "1..1\nok 1 Skip if not docker" | assert_output -
 }
 
 @test "Check skip_if_not_docker in Fake Real System" {
     skip_if_not_docker
     mv "/.dockerenv" "/.dockerenv.bak"
-    run -0 "${BATS_TMPDIR}/skip_if_not_docker.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_not_docker.bats"
     echo -e "1..1\nok 1 Skip if not docker # skip Not a Docker system." | assert_output -
     mv "/.dockerenv.bak" "/.dockerenv"
 }
 
 @test "Check skip_if_windows" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_windows.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_windows.bats"
     echo -e "1..1\nok 1 Skip if windows" | assert_output -
 }
 
 @test "Check skip_if_not_windows" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_not_windows.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_not_windows.bats"
     echo -e "1..1\nok 1 Skip if not windows # skip Not a Windows system." | assert_output -
 }
 
@@ -126,40 +126,40 @@ teardown_file() {
     mv /bin/uname /bin/uname.bak
     echo "echo 'MINGW64_NT-10.0'" >/bin/uname
     chmod +x /bin/uname
-    run -0 "${BATS_TMPDIR}/skip_if_windows.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_windows.bats"
     echo -e "1..1\nok 1 Skip if windows # skip Windows doesn't need it." | assert_output -
     mv /bin/uname.bak /bin/uname
 }
 
 @test "Check skip_if_termux" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_termux.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_termux.bats"
     echo -e "1..1\nok 1 Skip if termux" | assert_output -
 }
 
 @test "Check skip_if_not_termux" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_not_termux.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_not_termux.bats"
     echo -e "1..1\nok 1 Skip if not termux # skip Not a Termux system." | assert_output -
 }
 
 @test "Check skip_if_termux in Fake Termux" {
     skip_if_not_docker
     touch /bin/termux-setup-storage
-    run -0 "${BATS_TMPDIR}/skip_if_termux.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_termux.bats"
     echo -e "1..1\nok 1 Skip if termux # skip Termux doesn't need it." | assert_output -
     rm -f /bin/termux-setup-storage
 }
 
 @test "Check skip_if_linux" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_linux.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_linux.bats"
     echo -e "1..1\nok 1 Skip if linux # skip Linux doesn't need it." | assert_output -
 }
 
 @test "Check skip_if_not_linux" {
     skip_if_not_docker
-    run -0 "${BATS_TMPDIR}/skip_if_not_linux.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_not_linux.bats"
     echo -e "1..1\nok 1 Skip if not linux" | assert_output -
 }
 
@@ -168,7 +168,7 @@ teardown_file() {
     mv /bin/uname /bin/uname.bak
     echo "echo 'MINGW64_NT-10.0'" >/bin/uname
     chmod +x /bin/uname
-    run -0 "${BATS_TMPDIR}/skip_if_not_linux.bats"
+    run -0 bats "${BATS_TMPDIR}/skip_if_not_linux.bats"
     echo -e "1..1\nok 1 Skip if not linux # skip Not a Linux system." | assert_output -
     mv /bin/uname.bak /bin/uname
 }
