@@ -6,11 +6,30 @@ A [Bats](https://github.com/bats-core/bats-core) library with useful Bash functi
 
 ## Installation ##
 
+### [Copier](https://github.com/copier-org/copier) ###
+
+> It install library and necessary dependencies for current user.
+
+> [!IMPORTANT]
+> It is recommended to use the copier to install this library.
+
+```bash
+copier copy --trust https://github.com/Alimektor/bats-alimektor <path>
+```
+
+Specify name, description and file_tags for your first test.
+
+### [Make](https://www.gnu.org/software/make/) ###
+
+> It only install library, not full Bats with necessary dependencies.
+
+Install for all system:
+
 ```bash
 make install
 ```
 
-Or for local installation:
+Install for current user:
 
 ```bash
 make install LOCAL=true

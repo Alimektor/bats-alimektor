@@ -7,12 +7,13 @@ all: install
 
 ## Set variables to install / uninstall to ~/.bats/libs/
 ifeq ($(LOCAL), true)
-LIBDIR=~/.bats/libs/
+LIBDIR=~/.bats/libs
 endif
 
 install: ## Install bats-alimektor (Set LOCAL=true to install to ~/.bats/libs/)
 	$(info "Installing $(LIBNAME) to $(LIBDIR)...")
 	mkdir -p $(LIBDIR)
+	rm -rf $(LIBDIR)/$(LIBNAME)
 	cp -r . $(LIBDIR)/$(LIBNAME)
 	$(info "Installed $(LIBNAME) to $(LIBDIR)...")
 
