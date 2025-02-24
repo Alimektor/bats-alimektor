@@ -11,57 +11,57 @@ LIBDIR=$(HOME)/.bats/libs
 endif
 
 install: ## Install bats-alimektor (Set LOCAL=true to install to ~/.bats/libs/)
-	$(info "Installing $(LIBNAME) to $(LIBDIR)...")
+	@echo "Installing $(LIBNAME) to $(LIBDIR)..."
 	mkdir -p $(LIBDIR)
 	rm -rf $(LIBDIR)/$(LIBNAME)
 	cp -r . $(LIBDIR)/$(LIBNAME)
-	$(info "Installed $(LIBNAME) to $(LIBDIR)...")
+	@echo "Installed $(LIBNAME) to $(LIBDIR)..."
 
 uninstall: ## Uninstall bats-alimektor (Set LOCAL=true to install to ~/.bats/libs/)
-	$(info "Uninstalling $(LIBNAME) from $(LIBDIR)...")
+	@echo "Uninstalling $(LIBNAME) from $(LIBDIR)..."
 	rm -rf $(LIBDIR)/$(LIBNAME)
-	$(info "Uninstalled $(LIBNAME) from $(LIBDIR)...")
+	@echo "Uninstalled $(LIBNAME) from $(LIBDIR)..."
 
 docs: ## Create docs
-	$(info "Creating docs...")
+	@echo "Creating docs..."
 	docs/create-docs.sh
-	$(info "Created docs successfully...")
+	@echo "Created docs successfully..."
 
 check: ## Check bats-alimektor
-	$(info "Checking bats-alimektor...")
+	@echo "Checking bats-alimektor..."
 	pre-commit install
 	pre-commit run --all-files
-	$(info "Checked bats-alimektor successfully...")
+	@echo "Checked bats-alimektor successfully..."
 
 test: ## Test bats-alimektor
-	$(info "Running bats tests...")
+	@echo "Running bats tests..."
 	bats -r tests/
-	$(info "Ran bats tests successfully...")
+	@echo "Ran bats tests successfully..."
 
 docker: ## Build docker image
-	$(info "Building docker image...")
+	@echo "Building docker image..."
 	docker build -t bats-alimektor .
-	$(info "Built docker image...")
+	@echo "Built docker image..."
 
 docker-build-test: docker
-	$(info "Building docker image for tests...")
+	@echo "Building docker image for tests..."
 	docker build -t bats-alimektor-test -f tests/Dockerfile .
-	$(info "Built docker image for tests...")
+	@echo "Built docker image for tests..."
 
 docker-test: docker-build-test ## Test bats-alimektor in the docker image
-	$(info "Running docker image...")
+	@echo "Running docker image..."
 	docker run bats-alimektor-test bats -r tests/
-	$(info "Ran docker image successfully...")
+	@echo "Ran docker image successfully..."
 
 docker-docs-build:
-	$(info "Building docker image...")
+	@echo "Building docker image..."
 	docker build -t bats-alimektor-docs -f docs/Dockerfile .
-	$(info "Built docker image...")
+	@echo "Built docker image..."
 
 docker-docs-create:
-	$(info "Running docker image...")
+	@echo "Running docker image..."
 	docker run -v ${PWD}:/app bats-alimektor-docs
-	$(info "Ran docker image successfully...")
+	@echo "Ran docker image successfully..."
 
 docker-docs: docker-docs-build docker-docs-create ## Create docs in docker image
 
