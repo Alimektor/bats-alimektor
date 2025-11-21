@@ -9,7 +9,7 @@ A [Bats](https://github.com/bats-core/bats-core) library with useful Bash functi
 ### [Copier](https://github.com/copier-org/copier) ###
 
 > It install library and necessary dependencies for current user.
-
+>
 > [!IMPORTANT]
 > It is recommended to use the copier to install this library.
 

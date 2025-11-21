@@ -1,4 +1,4 @@
-LIBDIR=$(DESTDIR)/usr/local/lib/bats
+LIBDIR=$(DESTDIR)/usr/lib/bats
 LIBNAME=bats-alimektor
 
 .PHONY: all install uninstall docs check test docker docker-build-test docker-test docker-docs-build docker-docs-create docker-docs help
