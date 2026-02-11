@@ -21,7 +21,7 @@ Specify name, description and file_tags for your first test.
 
 ### [Make](https://www.gnu.org/software/make/) ###
 
-> It only install library, not full Bats with necessary dependencies.
+> It only installs library, not full Bats with necessary dependencies.
 
 Install for all system:
 
